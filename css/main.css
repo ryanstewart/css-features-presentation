@@ -66,7 +66,7 @@ body {
 }
 
 ::selection { 
-	background:#FF5E99; 
+	background:#3b4857; 
 	color:#fff; 
 	text-shadow: none; 
 }
@@ -75,7 +75,7 @@ body {
  * HEADERS
  *********************************************/
 
-.reveal h1 { font-size: 3.77em; }
+.reveal h1 { font-size: 3.00em; }
 .reveal h2 { font-size: 2.11em;	}
 .reveal h3 { font-size: 1.55em;	}
 .reveal h4 { font-size: 1em;	}
@@ -909,3 +909,230 @@ body {
 	display: none;
 }
 
+
+/**********
+* GRID
+************/
+.grid {
+    display: -webkit-flex;
+    display: flex;    
+}
+
+.col {
+    flex: 1;
+    margin: auto;
+}
+
+.col-left {
+    flex: 1;
+    margin: auto;
+    padding-right: 15px;
+}
+
+.col-right {
+    flex: 1;
+    margin: auto;
+    padding-left: 15px;
+}
+
+.colpadding {
+    flex: 1;
+    margin: auto;
+    padding-right: 35px;
+}
+
+
+/********
+*
+*********/
+.centered p {
+    margin-top: 100px;
+}
+
+.centered .state-background {
+
+}
+
+.untappd .state-background {
+    background: url('../img/untappd-splash.jpeg');
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+#html5-css3-js {
+    background: url('../img/html5-css3-js.png');
+    height: 300px;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+}
+
+@media only screen 
+and (min-width : 768px) {
+    #edge-logo {
+        background: url('../img/edge-inspect-logo-150x150.png');
+        height: 200px;
+        background-repeat: no-repeat;
+        background-position: center;
+    }
+    #inspect-feature-1 {
+        background: url('../img/edge-inspect-feature-1.png');
+        height: 350px;
+        background-repeat: no-repeat;
+        background-position: center;
+    }
+    #inspect-feature-2 {
+        background: url('../img/edge-inspect-feature-2.png');
+        height: 350px;
+        background-repeat: no-repeat;
+        background-position: center;
+    }
+    #inspect-feature-3 {
+        background: url('../img/edge-inspect-feature-3.png');
+        height: 350px;
+        background-repeat: no-repeat;
+        background-position: center;
+    }
+}
+
+@media only screen 
+and (max-width : 768px) {
+    #edge-logo {
+        background: url('../img/edge-inspect-logo-150x150.png');
+        height: 150px;
+        background-repeat: no-repeat;
+        background-position: center;
+    }
+    #inspect-feature-1 {
+        background: url('../img/edge-inspect-feature-1-mobile.png');
+        height: 400px;
+        background-repeat: no-repeat;
+        background-position: center;
+    }    
+}
+
+#google-maps {
+    width: 700px;
+    height: 400px;
+    margin: auto;
+}
+
+#mobile-os-list {
+    list-style-type: none;
+}
+
+.ios-bullet {
+
+}
+
+.accelerometer-bullet {
+   list-style-image:url('../img/accelerometer-dark.png');
+}
+.camera-bullet {
+   list-style-image:url('../img/camera-dark.png');
+}
+.capture-bullet {
+   list-style-image:url('../img/videocamera-dark.png');
+}
+.compass-bullet {
+    list-style-image:url('../img/compass-dark.png');
+}
+.connection-bullet {
+    list-style-image:url('../img/stats-dark.png');
+}
+.contacts-bullet {
+    list-style-image:url('../img/user-dark.png');
+}
+.device-bullet {
+    list-style-image:url('../img/battery-dark.png');
+}
+.events-bullet {
+    list-style-image:url('../img/zap-dark.png');
+}
+.file-bullet {
+    list-style-image:url('../img/stickynote-dark.png');
+}
+.geolocation-bullet {
+    list-style-image:url('../img/location-dark.png');
+}
+.media-bullet {
+    list-style-image:url('../img/movie-1-dark.png');
+}
+.network-bullet {
+    list-style-image:url('../img/broadcast-dark.png');
+}
+.notification-bullet {
+    list-style-image:url('../img/chat-dark.png');
+}
+.storage-bullet {
+    list-style-image:url('../img/database-dark.png');
+}
+
+.no-border {
+    border: 0;
+}
+
+.banner {
+	position: relative;
+	z-index: 1;
+	margin: 80px auto;
+	width: 330px;
+}
+
+.banner .line {
+	margin: 0 0 10px;
+	width: 100%;
+	height: 78px;
+	box-shadow: 10px 10px 10px rgba(0,0,0,0.05);
+	text-align: center;
+	text-transform: uppercase;
+	font-size: 3em;
+	line-height: 78px;
+	transform: skew(0, -15deg);
+}
+
+.banner .line:after,
+.banner .line:first-child:before {
+	position: absolute;
+	top: 44px;
+	left: 0;
+	z-index: -1;
+	display: block;
+	width: 330px;
+	height: 78px;
+	border-radius: 4px;
+	background: rgba(180,180,180,0.8);
+	content: '';
+	transform: skew(0, 15deg);
+}
+
+.banner .line:first-child:before {
+	top: -10px;
+	right: 0;
+	left: auto;
+}
+
+.banner .line:first-child:before,
+.banner .line:last-child:after {
+	width: 0;
+	height: 0;
+	border-width: 38px;
+	border-style: solid;
+	border-color: rgba(180,180,180,0.8) rgba(180,180,180,0.8) transparent transparent;
+	background: transparent;
+}
+
+.banner .line:last-child:after {
+	top: 12px;
+	border-color: transparent transparent rgba(180,180,180,0.8) rgba(180,180,180,0.8);
+}
+
+.banner span {
+	display: block;
+	width: 100%;
+	height: 100%;
+	border-radius: 4px;
+	background: rgba(255,255,255,0.9);
+	color: #666;
+	text-shadow: 1px 1px 0 #444;
+}
