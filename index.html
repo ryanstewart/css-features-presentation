@@ -4,7 +4,7 @@
 	<head>
 		<meta charset="utf-8">
 		
-		<title>Building and Testing Mobile Apps with Web Standards</title>
+		<title>Next Generation CSS Features</title>
 
 		<meta name="description" content="A framework for easily creating beautiful presentations using HTML">
 		<meta name="author" content="Hakim El Hattab">
@@ -13,13 +13,13 @@
 		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
 		
 		<link rel="stylesheet" href="css/main.css">
+        <link rel="stylesheet" href="css/results.css">
 		<link rel="stylesheet" href="css/theme/default.css" id="theme">
 
 		<!-- For syntax highlighting -->
 		<link rel="stylesheet" href="lib/css/zenburn.css">
-
 		<script>
-			// If the query includes 'print-pdf' we'll use the PDF print sheet
+            // If the query includes 'print-pdf' we'll use the PDF print sheet
 			document.write( '<link rel="stylesheet" href="css/print/' + ( window.location.search.match( /print-pdf/gi ) ? 'pdf' : 'paper' ) + '.css" type="text/css" media="print">' );
 		</script>
 
@@ -41,198 +41,441 @@
 			<!-- Any section element inside of this container is displayed as a slide -->
 			<div class="slides">
 				<section>
-                    <h2>Building &amp; Testing Mobile apps with Web Standards</h2>
-                    <img src="img/phonegap-bio-lab.png" />
+                    <div class="spherefilter">
+                        <h2>Intro to Next Generation CSS Features</h2>
+                        <img src="img/css3logo.png" />    
+                    </div>
 				</section>
 				
-				<section>
-					<p>Two different ways to approach mobile:</p>
-                        <div class="grid">
-                            <div class="col-left">
-                                <h2>Mobile Web</h2>
-                                <img src="img/mobile-web.png" />
-                            </div>
-                            <div class="col-right">
-                                <h2>Mobile App</h2>
-                                <img src="img/mobile-apps.png" />
-                            </div>
-                        </div>
-				</section>
-				<section>
-					<section>
-						<h2>Mobile Web</h2>
-						<p>The easiest and fastest way to deploy web content to mobile devices is inside the browser.</p>
-						<img src="img/kuichi-brewery-website.png" />
-					</section>
-					<section data-state="centered">
-                        <h2>Content Management</h2>
-						<p>No need to deal with updates or installations.</p>
-                        <p>Your users always have the latest version.</p>
-					</section>
-					<section data-state="centered">
-                        <h2>Development Productivity</h2>
-                        <p>Common codebase for every device.</p>
-                        <p>Nearly every device supports HTML.</p>
-					</section>
-					<section data-state="centered">
-                        <h2>Problems</h2>
-                        <p>Different form factors to deal with.</p>
-                        <p>Performance/features different across browsers.</p>
-					</section>
-					<section data-state="centered">
-                        <h3>In the end, you need to test directly on the device.</h3>
-					</section>
-				</section>
-                <section>
-                    <section data-state="centered">
-                        <h2>Adobe Edge Inspect</h2>
-                        <div id="edge-logo"></div>
-                    </section>
-                    <section>
-                        <h2>Synchronized Browsing</h2>
-                        <div id="inspect-feature-1"></div>
-                        <p>Browse the same site simultaneously across multiple devices to see how it renders.</p>
-                    </section>
-                    <section>
-                        <h2>Remote Inspection</h2>
-                        <div id="inspect-feature-2"></div>
-                        <p>View and modify elements remotely with Web Developers Tools.</p>
-                    </section>
-                    <section>
-                        <h2>Screenshots</h2>
-                        <div id="inspect-feature-3"></div>
-                        <p>Take screenshots from all the connected devices at once.</p>
-                    </section>
-                </section>
 
 				<section>
-                    <section>
-                        <h2>Mobile Applications</h2>
-                        <div class="grid">
-                            <div class="col"><img src="img/untappd-screenshot.png"></div>
-                            <div class="col"><img src="img/wikipedia-screenshot.png"></div>
+					<section>
+						<h2>Moving the Web Forward</h2>
+						<p>Adobe wants to help move the web forward by championing features in the 
+                            W3C and engineering those features directly in open browser engines.</p>
+                        <object type="image/svg+xml" data="img/w3c_home_nb-v.svg" width="300" height="300"></object>
+					</section>
+					<section data-state="centered">
+						<h2>Currently we've been working with WebKit</h2>
+                        <img src="img/webkit_logo.png" />
+					</section>
+					<section data-state="centered">
+                        <h2>3 Areas of Focus</h2>
+                        <div class="row">
+                            <div class="rowitem">
+                                <img src="img/text-features.png"><br />
+                                <h4>Text Features</h4>
+                            </div>
+                            <div class="rowitem">
+                                <img src="img/cinematic-features.png"><br />
+                                <h4>Cinematic Features</h4>
+                            </div>
+                            <div class="rowitem">
+                                <img src="img/graphical-features.png"><br />
+                                <h4>Graphical Features</h4>
+                            </div>
                         </div>
-                        <p>The most powerful way to deploy content on devices</p>
-                    </section>
-                    <section data-state="centered">
-                        <p>Mobile applications give you access to all of the features of the device.</p>
-                        <p>You can deploy on app stores and be a core part of the mobile ecosystem.</p>
-                    </section>
-                    <section data-state="google-maps-section">
-                        <p>In some cases, the mobile browser is catching up with mobile apps in terms of device access.</p>
-                        <pre><code contenteditable>
-if (navigator.geolocation) {
-    navigator.geolocation.getCurrentPosition(onSuccess, onError);
-} else {
-    error('Geolocation not supported');
-}
-                        </code></pre>
-                        <div id="google-maps"><span id="geo-status">Location:</span></div>
-                    </section>
-                    <section data-state="centered">
-                        <p>But in general, there is still a gap between mobile browsers and mobile apps when it comes to functionality.</p>    
-                    </section>
-                    <section data-state="centered">
-                        <p>One of the other pain points it that native SDKs tend to be more complex and are very device-specific.</p>
-                        <p>You can't reuse code across platforms and have to develop each application from scratch.</p>
-                    </section>
-                    <section data-state="centered">
-                        <h2>Mobile App Landscape</h2>
-                        <ul id="mobile-os-list">
-                            <li class="ios-bullet">iOS (Objective-C)</li>
-                            <li>Android (Java NDK) </li>
-                            <li>Windows Phone (C#)</li>
-                            <li>BlackBerry (J2ME)</li>
-                            <li>WebOS (C++)</li>
-                            <li>Symbian (C++)</li>
-                            <li>Bada (C++)</li>
-                        </ul>
-                    </section>
+					</section>
 				</section>
                 <section>
-                    <section>
-                        <h2>Adobe PhoneGap</h2>
-                        <div id="html5-css3-js"></div>
-                        <p>Mobile apps with HTML5, CSS3, and JavaScript</p>
+                    <section data-state="centered">
+                        <h2>Magazine-style Advanced Layout</h2>
+                        <img src="img/text-features-large.png" />
                     </section>
                     <section>
-                        <img src="img/phonegap-description.png" />
-                        <p>PhoneGap provides a web layer for UI with JavaScript Libraries to connect to device APIs.</p>
+                        <h2>CSS Regions</h2>
+                        <img src="img/cssregions.png" />
+                        <h4>Lets text flow across elements</h4>
+                    </section>
+                    <section data-state="cssregions-result-slide">
+                        <h2>Browser Support</h2>
+                        <div id="cssregions-results" class="results-panel">
+                            <!-- results go here -->
+                        </div>
+                        <div>
+                            <p>Results provided by Browserscope</p>
+                        </div>
                     </section>
                     <section>
-                        <h2>Open Source</h2>
-                        <p><img src="img/apache-cordova-logo.png"></p>
-                        <p>PhoneGap is an Adobe distribution of the Apache Cordova Project.</p>
+                        <h2>-webkit-flow</h2>
+                        <p>Regions introduces two new CSS properties that control how text will be put into container elements.</p>
+                        <p><code>-webkit-flow-into: [name]</code> Tells the browser to extract the content from the selector and flow it into the named region.</p>
+                        <p><code>-webkit-flow-from: [name]</code> Tells elements in the selector to pull their content from a named region.</p>
                     </section>
                     <section>
-                        <div class="grid">
-                            <div class="colpadding"><p>PhoneGap provides access to a number of core device APIs.</div>
-                            <div class="col">
-                                <ul>
-                                    <li class="accelerometer-bullet">Accelerometer</li>
-                                    <li class="camera-bullet">Camera</li>
-                                    <li class="capture-bullet">Capture</li>
-                                    <li class="compass-bullet">Compass</li>
-                                    <li class="connection-bullet">Connection</li>
-                                    <li class="contacts-bullet">Contacts</li>
-                                    <li class="device-bullet">Device</li>
-                                    <li class="events-bullet">Events</li>
-                                    <li class="file-bullet">File</li>
-                                    <li class="geolocation-bullet">Geolocation</li>
-                                    <li class="media-bullet">Media</li>
-                                    <li class="network-bullet">Network</li>
-                                    <li class="notification-bullet">Notification</li>
-                                    <li class="storage-bullet">Storage</li>
-                                </ul>
+                        <h2>Demo</h2>
+                        <pre><code>article {
+    -webkit-flow-into: mycontent;
+}
+
+.region {
+    -webkit-flow-from: mycontent;
+}</code></pre>
+                        <div>
+                            <div id="region1" class="region"></div>
+                            <div id="region2" class="region"></div>
+                            <div id="region3" class="region"></div>
+                        </div>
+                        <article>
+                            <h3>My Content</h3>
+                            <p>This content is wrapped in an <code>article</code> tag. But with CSS regions
+                            we can extract all of this and then place it into named regions. Those regions will
+                            automatically reflow as the browser is resized.</p>
+                            <h3>Why Regions?</h3>
+                            <p>Normally <code>overflow</code> is one of the few ways in CSS that we can deal 
+                                with content that doesn't fit in its container. With regions, we can direct it
+                            and send it to other containers.</p>
+                            <div class="hipster-ipsum">
+                                <h4>Hipster Ipsum</h4>
+                                <p>Viral street art freegan, portland locavore letterpress beard Austin bicycle rights next level lo-fi authentic synth cardigan PBR. Mlkshk before they sold out narwhal jean shorts, farm-to-table four loko direct trade biodiesel kale chips odd future lomo brunch swag keffiyeh truffaut. Gluten-free viral direct trade vinyl freegan. Ennui messenger bag bicycle rights art party, marfa +1 yr pickled dreamcatcher 8-bit synth squid jean shorts mlkshk. Freegan small batch photo booth organic godard american apparel etsy craft beer, put a bird on it bicycle rights shoreditch portland twee tumblr trust fund. Lomo kale chips umami narwhal gentrify american apparel, terry richardson cray gastropub vice beard bicycle rights pork belly blog. Butcher flexitarian dreamcatcher occupy, viral marfa mlkshk vegan lo-fi seitan brunch next level odd future sartorial.</p>
                             </div>
+                        </article>
+                    </section>
+                    <section>
+                        <div class="adv-regions">
+                            <div id="adv-region1" class="primary"></div>
+                            <div>
+                                <div id="adv-region2" class="secondary"></div>
+                                <div id="adv-region3" class="primary"></div>
+                                <div id="adv-region4" class="secondary"></div>
+                            </div>
+                        </div>
+                        <div id="primary-content">
+                            <h3>My Primary Content</h3>
+                            <p>This content is wrapped in an <code>article</code> tag. But with CSS regions
+                            we can extract all of this and then place it into named regions. Those regions will
+                            automatically reflow as the browser is resized.</p>
+                            <h3>Why Regions?</h3>
+                            <p>Normally <code>overflow</code> is one of the few ways in CSS that we can deal 
+                                with content that doesn't fit in its container. With regions, we can direct it
+                            and send it to other containers.</p>
+                        </div>
+                        <div id="secondary-content">
+                            <h3>My Secondary Content</h3>
+                            <p>This content is wrapped in an <code>article</code> tag. But with CSS regions
+                            we can extract all of this and then place it into named regions. Those regions will
+                            automatically reflow as the browser is resized.</p>
+                            <h3>Why Regions?</h3>
+                            <p>Normally <code>overflow</code> is one of the few ways in CSS that we can deal 
+                                with content that doesn't fit in its container. With regions, we can direct it
+                            and send it to other containers.</p>
+                        </div>
+                    </section>
+                    <section>
+                        <h2>CSS Exclusions</h2>
+                        <img src="img/cssexclusions.png" />
+                        <h4>Lets text flow around and inside shapes</h4>
+                    </section>
+                    <section data-state="cssexclusions-result-slide">
+                        <h2>Browser Support</h2>
+                        <div id="cssexclusions-results" class="results-panel">
+                            <!-- results go here -->
+                        </div>
+                        <div>
+                            <p>Results provided by Browserscope</p>
+                        </div>
+                    </section>
+                    <section>
+                        <h2>-webkit-shape</h2>
+                        <p><code>-webkit-shape</code> Lets you define boundaries for text content. Can be a <code>rectangle</code>, <code>circle</code>, or <code>polygon</code>. Eventually you will also be able to reference SVG shapes and paths to define shapes.</p>
+                        <p>Some limitations: No SVG support, polygons have to be structured a specific way.</p>
+                    </section>
+                    <section>
+                        <h2>Demo</h2>
+                        <pre><code>
+-webkit-shape-inside: rectangle(0px, 0px, 600px, 370px, 150px, 150px);
+                        </code></pre>
+                        <div id="css-exclusions">
+                            pub rims attenuation dextrin malt extract enzymes brew filter, hefe heat exchanger abv. wort; bock pint glass hand pump lambic, all-malt. ipa hops dry stout, barleywine bacterial hoppy, racking bottle conditioning barrel. racking: berliner weisse, hops ester. becher, " adjunct mash tun, wheat beer glass." dextrin keg double bock/dopplebock acid rest.
+                            mead saccharification, becher primary fermentation craft beer goblet, becher! brew, priming squares-- wort chiller, priming yeast cask conditioning. biere de garde alcohol cask conditioned ale dry stout bottle conditioning acid rest; attenuation. berliner weisse ibu; lauter tun. brewpub infusion rims bung hydrometer mead top-fermenting yeast dry hopping. priming lauter, units of bitterness attenuation krug noble hops kolsch? original gravity cask infusion autolysis, brewing. cask conditioning; degrees plato? cask conditioning: wit scotch ale hops, krug brewpub caramel malt. pitching cask cask original gravity! ipa bock tulip glass racking enzymes hoppy dry stout, " dextrin." saccharification beer bung chocolate malt squares original gravity. length microbrewery infusion, wit; abbey bittering hops lambic seidel, " malt extract." mash tun balthazar pint glass attenuation, imperial; imperial. primary fermentation berliner weisse noble hops oxidized. sour/acidic saccharification noble hops.                                
+                            wort, cask, tulip glass cask conditioning. lager; chocolate malt trappist, " ester." bunghole filter final gravity gravity dextrin pitching conditioning! black malt kolsch fermentation acid rest priming carboy, sour/acidic krausen lager. adjunct bright beer barley: bottom fermenting yeast hard cider conditioning pilsner abv? hand pump bright beer abv autolysis sour/acidic copper. enzymes wort noble hops biere de garde filter amber. ipa; seidel goblet becher mash hand pump.                                
+                            wheat beer glass. bunghole grainy caramel malt filter priming scotch ale hydrometer. barrel wheat beer glass brew goblet. barrel saccharification lauter noble hops lagering microbrewery brew kettle aerobic. conditioning tank bittering hops craft beer saccharification conditioning, anaerobic ipa primary fermentation. sour/acidic keg aroma hops malt trappist final gravity oxidized. additive crystal malt ibu, anaerobic craft beer pilsner aroma hops? pitching bung, mash, conditioning tank.
+                            hydrometer beer primary fermentation hefe lagering draft (draught? aroma hops barrel kolsch krausen pub alcohol. rims bacterial brewhouse fermentation cask barley pint glass. degrees plato bright beer attenuation original gravity. brewhouse finishing hops krug rims ale, copper, secondary fermentation wort kolsch. bitter adjunct final gravity: bottle conditioning.
                         </div>
                     </section>
                     <section data-state="centered">
-                        <h2>Plugins</h2>
-                        <div class="grid">
-                            <div class="colpadding">
-                                <img src="img/phonegap-plugin.png" />                            
-                            </div>
-                            <div class="col">
-                                <p>PhoneGap includes a plugin architecture for bridging extra native functionality and bringing it into JavaScript.</p>                            
-                                <p><a href="https://github.com/phonegap/phonegap-plugins">https://github.com/phonegap/phonegap-plugins</a></p>
-                            </div>
-                        </div>
-                    </section>
-                    <section data-state="untappd">
-                        <h2>Demo: Untappd</h2>
+                        <a href="http://ryanstewart.github.com/css-exclusions-experiments/beer_shapes/">
+                        <h2>Working with Fun Shapes</h2>
+                        </a>
                     </section>
                 </section>
                 <section>
-                    <section>
-                        <h2>PhoneGap Build</h2>
-                        <img src="img/phonegap-build-bot.png" />
-                    </section>
-                    <section>
-                        <p>PhoneGap Build lets you build for any platform supported by PhoneGap.</p>
-                        <img src="img/phonegap-bulid-diagram.png" />
-                    </section>
                     <section data-state="centered">
-                        <p>Provides built-in debugging and streamlined updating with Hydration.</p>
+                        <h2>Cinematic Effects</h2>
+                        <img src="img/cinematic-features-large.png" />
                     </section>
                     <section>
-                        <p>Includes Github support for projects and a team system so you can specify different roles for your users.</p>
-                        <img src="img/github-logo.png" />
+                        <h2>CSS Filters</h2>
+                        <img src="img/csscustomfilters.png" />
+                        <h4>Apply filters and shaders to elements</h4>
+                    </section>
+                    <section>
+                        <h2>Browser Support</h2>
+                        <img src="img/chrome-canary-logo.png" />
+                        <p>Built-in filters are supported by Chrome as well as the latest version of Mobile Safari in iOS 6.</p>
+                        <p>Custom filters require Chrome Canary with Experiment Webkit Features turned on in <a href="chrome://flags/">chrome://flags/</a>.</p>
+                    </section>
+                    <section>
+                        <h2>Built-in Filters</h2>
+                        <p>Built-in filters are filters that are core to the filters specification. 
+                            With built-in features you can apply effects like <span class="blur-filter">blur</span> or
+                            <span class="dropshadow-filter">drop shadow</span>.</p>
+                        <p>Filters use the <code>-webkit-filter</code> property followed by the name of the specific
+                        filter you want to use and some parameters which adjust the effect. You can apply multiple filters
+                        to an element.</p>
+                    </section>
+                    <section>
+                        <h2>Built-in Filter Demo</h2>
+                        <pre><code>
+-webkit-filter: brightness(10%) 
+    saturate(1000%) 
+    hue-rotate(180deg);
+                        </code></pre>
+                        <img src="img/beer-photo.jpg" class="photo-filters" />
+                    </section>
+                    <section>
+                        <h2>Custom Filters</h2>
+                        <p>Custom filters let you write your own filters using shader language and apply them to elements on the screen.</p>
+                        <p>With custom filters you can apply effects like <span class="crumple-filter">crumple</span>, <span class="sphere-filter">spherify</span>, or <span class="burn-filter">burn</span>.</p>
+                        <p>Custom filters are referenced as external files via the <code>custom(url())</code> attribute of <code>-webkit-filter</code>.</p>
+                    </section>
+                    <section>
+                        <h2>Custom Filters</h2>
+                        <p>Custom filters require two different kinds of shaders to run.</p>
+                        <h3>Fragment Shaders</h3>
+                        <p>Modify the surface appearance of elements. Lighting, opacity, etc.</p>
+                        <h3>Vertex Shaders</h3>
+                        <p>Modify the shape of elements and provide the transform properties.</p>
+                    </section>
+                    <section>
+                        <h2>Custom Filter Demo</h2>
+                        <pre><code>
+    -webkit-filter: custom(url(../shaders/crumple.vs) 
+mix(url(../shaders/crumple.fs) multiply source-atop), 
+50 50 border-box, transform perspective(1000) scale(1) 
+rotateX(0deg) rotateY(0deg) rotateZ(0deg), amount 1, 
+strength 0.4, lightIntensity 1);
+                        </code></pre>
+                        <img src="img/beer-photo.jpg" class="crumple-filter" />
+                    </section>
+                    <section>
+                        <h2>CSS Filter Lab</h2>
+                        <p>A studio for creating and applying filters. Supports animation.</p>
+                        <a href="http://html.adobe.com/webstandards/csscustomfilters/cssfilterlab/" target="_blank"><img src="img/css-filter-lab-screenshot.png" /></a>
+                    </section>
+                </section>
+                <section>
+                    <section data-state="centered">
+                        <h2>Graphical Features</h2>
+                        <img src="img/graphical-features-large.png" />
+                        <p class="speakerhint">This section requires the <a href="https://github.com/adobe/webkit/tree/may2012-f2f-prototype">Webkit Prototype browser</a> to display samples correctly.</p>
+                    </section>
+                    <section>
+                        <h2>CSS Compositing/Blending</h2>
+                        <img src="img/csscompositing.png" />
+                        <h4> Changing how elements visually interact with each other</h4>
+                    </section>
+                    <section>
+                        <h2>Compositing</h2>
+                        <p>Determines how the shapes of elements interact.</p>
+                        <img src="img/css-compositing-screenshot.png" />
+                    </section>
+                    <section>
+                        <h2>Compositing</h2>
+                        <p>Takes two elements, the <code>destination</code>, and the <code>source</code>, and uses the
+                        <code>-webkit-alpha-compositing</code> CSS property to decide how those 
+                        elements should interact with each other when they overlap.</p>
+                        <p>When <code>-webkit-isolation: isolate;</code> is set, the elements will clip to the defined element.</p>
+                    </section>
+                    <section>
+                        <h2>Blending</h2>
+                        <p>Determines how the colors of two elements will change and affect each other.</p>
+                        <p>Uses the <code>-webkit-blend-mode:</code> property and can take a number of basic blend modes.</p>
+                        <p>Only one blend mode can be applied at a time.</p>
+                    </section>
+                    <section>
+                        <h2>Browser Support</h2>
+                        <p>
+                            Neither of these features is currently supported in mainstream browsers. 
+                            To use/test them, a special WebKit build is required. That build can be downloaded 
+                            from <a href="https://github.com/adobe/webkit/tree/may2012-f2f-prototype">Adobe's GitHub repository</a>. 
+                        </p>
+                        <img src="img/chromium-icon.png" />
+                    </section>
+                    <!----
+                        Start of compositing demos
+                    ---->
+                    <section>
+                        <h3>Compositing Demo: None</h3>
+                        <p>This is how the elements look with no compositing.</p>
+                        <div id="compositing-container">
+                            <div id="compositing-destination">
+                                Destination
+                            </div>
+                            <div id="compositing-source">
+                                Source
+                            </div>
+                        </div>
+                    </section>
+                    <section>
+                        <h3>Compositing: dst-over</h3>
+                        <pre><code>
+.dst-over { -webkit-alpha-compositing: dst-over; }
+                        </code></pre>
+                        <div id="compositing-container">
+                            <div id="compositing-destination">
+                                Destination
+                            </div>
+                            <div id="compositing-source" class="dst-over">
+                                Source
+                            </div>
+                        </div>
+                        <p><code>.dst-over</code> places the destination element over the source with no clipping.</p>
+                    </section>
+                    <section>
+                        <h3>Compositing: dst-atop</h3>
+                        <pre><code>
+.dst-atop { -webkit-alpha-compositing: dst-atop; }
+                        </code></pre>
+                        <div id="compositing-container">
+                            <div id="compositing-destination">
+                                Destination
+                            </div>
+                            <div id="compositing-source" class="dst-atop">
+                                Source
+                            </div>
+                        </div>
+                        <p><code>.dst-atop</code> uses the source as the clipping path but keeps the styling of the destination</p>
+                    </section>
+                    <section>
+                        <h2>Compositing: dst-in</h2>
+                        <pre><code>
+.dst-in { -webkit-alpha-compositing: dst-in; }
+                        </code></pre>
+                        <div id="compositing-container">
+                            <div id="compositing-destination">
+                                Destination
+                            </div>
+                            <div id="compositing-source" class="dst-in">
+                                Source
+                            </div>
+                        </div>
+                        <p><code>.dst-in</code> uses the clipping path of the source element but doesn't render anything outside of the destination element.</p>
+                    </section>
+                    <section>
+                        <h2>Compositing: src-in</h2>
+                        <pre><code>
+.src-in { -webkit-alpha-compositing: src-in; }
+                        </code></pre>
+                        <div id="compositing-container">
+                            <div id="compositing-destination">
+                                Destination
+                            </div>
+                            <div id="compositing-source" class="src-in">
+                                Source
+                            </div>
+                        </div>
+                        <p><code>.src-in</code> uses the clipping path of the source element and renders it within the confines of the destination.</p>
+                    </section>
+                    <section>
+                        <h2>Compositing: plus</h2>
+                        <pre><code>
+.plus { -webkit-alpha-compositing: plus; }
+                        </code></pre>
+                        <div id="compositing-container">
+                            <div id="compositing-destination">
+                                Destination
+                            </div>
+                            <div id="compositing-source" class="plus">
+                                Source
+                            </div>
+                        </div>
+                        <p><code>.plus</code> modifies the color of any overlapping sections of the source and destination elements.</p>
+                    </section>
+                    <!--
+                        Start of the Blend Demos
+                    -->
+                    <section>
+                        <h2>Blending Demo</h2>
+                        <p>This is how the demo looks with no blend modes enabled.</p>
+                        <div id="blending-container">
+                            <img id="blending-beer-photo" src="img/beer-photo.jpg" />
+                            <img id="blending-ps-logo" src="img/photoshop-icon.png"/>
+                        </div>
+                    </section>
+                    <section>
+                        <h2>Blending: Multiply</h2>
+                        <pre><code>
+.blend-multiply {
+    -webkit-blend-mode: multiply;
+}
+                        </code></pre>
+                        <div id="blending-container">
+                            <img id="blending-beer-photo" src="img/beer-photo.jpg" />
+                            <img id="blending-ps-logo" src="img/photoshop-icon.png" class="blend-multiply"/>
+                        </div>
+                    </section>
+                    <section>
+                        <h2>Blending: Screen</h2>
+                        <pre><code>
+.blend-screen {
+    -webkit-blend-mode: screen;
+}
+                        </code></pre>
+                        <div id="blending-container">
+                            <img id="blending-beer-photo" src="img/beer-photo.jpg" />
+                            <img id="blending-ps-logo" src="img/photoshop-icon.png" class="blend-screen"/>
+                        </div>
+                    </section>
+                    <section>
+                        <h2>Blending: Color Dodge</h2>
+                        <pre><code>
+.blend-color-dodge {
+    -webkit-blend-mode: color-dodge;
+}
+                        </code></pre>
+                        <div id="blending-container">
+                            <img id="blending-beer-photo" src="img/beer-photo.jpg" />
+                            <img id="blending-ps-logo" src="img/photoshop-icon.png" class="blend-color-dodge"/>
+                        </div>
+                    </section>
+                    <section>
+                        <h2>Blending: Hard Light</h2>
+                        <pre><code>
+.blend-hard-light {
+    -webkit-blend-mode: hard-light;
+}
+                        </code></pre>
+                        <div id="blending-container">
+                            <img id="blending-beer-photo" src="img/beer-photo.jpg" />
+                            <img id="blending-ps-logo" src="img/photoshop-icon.png" class="blend-hard-light"/>
+                        </div>
+                    </section>
+                    <section>
+                        <h2>Blending: Soft Light</h2>
+                        <pre><code>
+.blend-soft-light {
+    -webkit-blend-mode: soft-light;
+}
+                        </code></pre>
+                        <div id="blending-container">
+                            <img id="blending-beer-photo" src="img/beer-photo.jpg" />
+                            <img id="blending-ps-logo" src="img/photoshop-icon.png" class="blend-soft-light"/>
+                        </div>
                     </section>
                 </section>
                 <section>
                     <h2>Links</h2>
                     <ul>
-                        <a href="http://html.adobe.com/edge/inspect">Edge Inspect - http://html.adobe.com/edge/inspect</a>
-                        <a href="http://www.phonegap.com">PhoneGap - http://www.phonegap.com</a>
-                        <a href="http://build.phonegap.com">PhoneGap Build - http://build.phonegap.com</a>
-                        <a href="http://cordova.io">Apache Cordova - http://cordova.io</a>
+                        <li><a href="http://html.adobe.com/webstandards/">Adobe and Web Standards</a></li>
+                        <li><a href="http://alteredqualia.com/css-shaders/article/">Great Intro to CSS Shaders</a></li>
+                        <li><a href="hansmuller-webkit.blogspot.com">Hans Muller's blog on CSS Exclusions</a></li>
                     </ul>
                     <h2>Contact</h2>
                     <ul>
-                        <li><a href="">Email - ryan@adobe.com</a></li>
+                        <li><a href="mailto:ryan@adobe.com">Email - ryan@adobe.com</a></li>
                         <li><a href="">Twitter - @ryanstewart</a></li>
-                        <li><a href="">Github - ryanstewart</a></li>
+                        <li><a href="http://github.com/ryanstewart/">Github - ryanstewart</a></li>
                     </ul>
                 </section>
 			</div>
@@ -254,10 +497,11 @@ if (navigator.geolocation) {
             </div>			
 		</div>
 
+        <script src="lib/js/jquery-1.7.2.min.js"></script>
 		<script src="lib/js/head.min.js"></script>
 		<script src="js/reveal.min.js"></script>
-        <script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=false"></script>
-        <script src="js/code.js"></script>
+        <script src="js/results.js"></script>
+        <script src="js/main.js"></script>
 		<script>
 			
 			// Full list of configuration options available here:

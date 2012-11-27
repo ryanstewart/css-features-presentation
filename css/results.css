@@ -1,0 +1,124 @@
+tbody th {
+  white-space: nowrap;
+  border-right: 1px solid #CCC; }
+
+thead th {
+  padding: 0;
+  text-align: left;
+  vertical-align: top;
+  white-space: nowrap; }
+  thead th div {
+    margin: 0;
+    padding: 0;
+    position: relative; }
+    thead th div span {
+      position: absolute;
+      display: block;
+      width: 220px;
+      overflow: hidden;
+      left: -20px;
+      bottom: 60px;
+      -moz-transform: rotate(320deg);
+      -o-transform: rotate(320deg);
+      -ms-transform: rotate(320deg);
+      -webkit-transform: rotate(320deg);
+      transform: rotate(320deg); }
+
+.table {
+  table-layout: fixed;
+  width: auto;
+  border-right: none;
+  border-top: none; 
+}
+
+.table-bordered tr {
+    line-height: 10px;
+}
+
+.table-bordered thead th {
+  border-left: none;
+  width: 40px !important;
+  height: 10px !important;
+  padding-top: 150px;
+  position: relative; 
+  font-weight: bold;
+  font-size: 15px;
+}
+
+.table-bordered tbody th {
+  border-left: none; 
+  font-size: 15px;
+  font-weight: bold;
+}
+
+.table-bordered td {
+  border-left: none;
+  width: 40px !important;
+  text-align: center;
+    
+}
+
+.table-bordered td.count {
+  text-align: right;
+  padding-right: 20px;
+  width: 50px; 
+}
+.table-bordered td.success {
+  background-color: #1d7101; 
+}
+
+.table-bordered td.success span {
+    color: #FFF;
+    font-size: 0;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none; 
+}
+  .table-bordered td.success span:after {
+    color: #178b17;
+    content: '';
+    display: block;
+    font-size: 25px;
+}
+.table-bordered td.fail {
+  background-color: #b53030; 
+}
+
+.table-bordered td.fail span {
+    color: #FFF;
+    font-size: 0;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none; 
+}
+
+.table-bordered td.fail span:after {
+    color: #999;
+    content: '';
+    display: block;
+    font-size: 10px; 
+}
+
+.table-bordered td.blank span {
+  color: #FFF;
+  font-size: 0;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none; 
+}
+
+.table-bordered td.blank span:after {
+  color: #555;
+  content: '-';
+  display: block;
+  font-size: 10px; 
+}

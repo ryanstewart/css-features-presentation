@@ -945,6 +945,10 @@ body {
 /********
 *
 *********/
+.speakerhint {
+    font-size: 15px;
+    font-style: italic;
+}
 .centered p {
     margin-top: 100px;
 }
@@ -953,119 +957,22 @@ body {
 
 }
 
-.untappd .state-background {
-    background: url('../img/untappd-splash.jpeg');
+.cssregions-result-slide {
+	margin-top: -100px;
+}
+
+#css-regions {
+    background: url('../img/cssregions.png');
+    min-height: 300px;
     background-position: center;
     background-repeat: no-repeat;
 }
 
-#html5-css3-js {
-    background: url('../img/html5-css3-js.png');
-    height: 300px;
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: contain;
-}
-
-@media only screen 
-and (min-width : 768px) {
-    #edge-logo {
-        background: url('../img/edge-inspect-logo-150x150.png');
-        height: 200px;
-        background-repeat: no-repeat;
-        background-position: center;
-    }
-    #inspect-feature-1 {
-        background: url('../img/edge-inspect-feature-1.png');
-        height: 350px;
-        background-repeat: no-repeat;
-        background-position: center;
-    }
-    #inspect-feature-2 {
-        background: url('../img/edge-inspect-feature-2.png');
-        height: 350px;
-        background-repeat: no-repeat;
-        background-position: center;
-    }
-    #inspect-feature-3 {
-        background: url('../img/edge-inspect-feature-3.png');
-        height: 350px;
-        background-repeat: no-repeat;
-        background-position: center;
-    }
-}
-
-@media only screen 
-and (max-width : 768px) {
-    #edge-logo {
-        background: url('../img/edge-inspect-logo-150x150.png');
-        height: 150px;
-        background-repeat: no-repeat;
-        background-position: center;
-    }
-    #inspect-feature-1 {
-        background: url('../img/edge-inspect-feature-1-mobile.png');
-        height: 400px;
-        background-repeat: no-repeat;
-        background-position: center;
-    }    
-}
 
 #google-maps {
     width: 700px;
     height: 400px;
     margin: auto;
-}
-
-#mobile-os-list {
-    list-style-type: none;
-}
-
-.ios-bullet {
-
-}
-
-.accelerometer-bullet {
-   list-style-image:url('../img/accelerometer-dark.png');
-}
-.camera-bullet {
-   list-style-image:url('../img/camera-dark.png');
-}
-.capture-bullet {
-   list-style-image:url('../img/videocamera-dark.png');
-}
-.compass-bullet {
-    list-style-image:url('../img/compass-dark.png');
-}
-.connection-bullet {
-    list-style-image:url('../img/stats-dark.png');
-}
-.contacts-bullet {
-    list-style-image:url('../img/user-dark.png');
-}
-.device-bullet {
-    list-style-image:url('../img/battery-dark.png');
-}
-.events-bullet {
-    list-style-image:url('../img/zap-dark.png');
-}
-.file-bullet {
-    list-style-image:url('../img/stickynote-dark.png');
-}
-.geolocation-bullet {
-    list-style-image:url('../img/location-dark.png');
-}
-.media-bullet {
-    list-style-image:url('../img/movie-1-dark.png');
-}
-.network-bullet {
-    list-style-image:url('../img/broadcast-dark.png');
-}
-.notification-bullet {
-    list-style-image:url('../img/chat-dark.png');
-}
-.storage-bullet {
-    list-style-image:url('../img/database-dark.png');
 }
 
 .no-border {
@@ -1135,4 +1042,250 @@ and (max-width : 768px) {
 	background: rgba(255,255,255,0.9);
 	color: #666;
 	text-shadow: 1px 1px 0 #444;
+}
+
+.spherefilter {
+  -webkit-animation-delay: 15s;
+  -webkit-animation-duration: 10s;
+  -webkit-animation-name: filter-animation;
+  -webkit-animation-iteration-count: infinite;
+    
+}
+@-webkit-keyframes filter-animation {        
+    from {
+        -webkit-filter: custom(url(../shaders/spherify.vs) mix(url(../shaders/spherify.fs) multiply source-atop), 50 50 border-box, amount 0, sphereRadius 0.35, sphereAxis -0.25 1 0, sphereRotation 90, ambientLight 0, lightPosition 1 -0.25 0.25, lightColor 1 1 1 1, transform perspective(1000) scale(1) rotateX(0deg) rotateY(0deg) rotateZ(0deg));
+    }
+    31% {
+        -webkit-filter: custom(url(../shaders/spherify.vs) mix(url(../shaders/spherify.fs) multiply source-atop), 50 50 border-box, amount 1, sphereRadius 0.35, sphereAxis -0.25 1 0, sphereRotation 90, ambientLight 0, lightPosition 1 -0.25 0.25, lightColor 1 1 1 1, transform perspective(1000) scale(1) rotateX(0deg) rotateY(0deg) rotateZ(0deg));
+    }
+    64% {
+        -webkit-filter: custom(url(../shaders/spherify.vs) mix(url(../shaders/spherify.fs) multiply source-atop), 50 50 border-box, amount 1, sphereRadius 0.35, sphereAxis -0.25 1 0, sphereRotation 270.887, ambientLight 0.194, lightPosition 1 -0.25 0.25, lightColor 1 1 1 1, transform perspective(1000) scale(1) rotateX(0deg) rotateY(0deg) rotateZ(0deg));
+    }
+    to {
+        -webkit-filter: custom(url(../shaders/spherify.vs) mix(url(../shaders/spherify.fs) multiply source-atop), 50 50 border-box, amount 0, sphereRadius 0.35, sphereAxis -0.25 1 0, sphereRotation 270, ambientLight 0.29, lightPosition 1 -0.25 0.25, lightColor 1 1 1 1, transform perspective(1000) scale(1) rotateX(0deg) rotateY(0deg) rotateZ(0deg));
+    }
+}
+
+
+.row {
+
+}
+
+.rowitem {
+    float: left;
+    font-size: 24px;
+    padding: 10px;
+}
+
+.results-panel {
+    font-size: 10px;
+}
+
+/**** CSS Regions ****/
+article {
+    -webkit-flow-into: mycontent;
+    font-size: 20px;
+}
+
+.region {
+    -webkit-flow-from: mycontent;
+    float: left;
+    height: 60%;
+    border: solid 1px;
+    margin-left: 10px;
+}
+
+#region1 {
+    width: 52%;
+    border-color: #f00;
+}
+
+#region2 {
+    width: 16%;
+    border-color: #0f0;
+}
+
+#region3 {
+    width: 15%;
+    border-color: #00f;
+}
+
+.hipster-ipsum {
+    font-size: 10px;
+    display: none;
+}
+
+#primary-content {
+    font-size: 20px;
+    color: #131d55;
+    -webkit-flow-into: primarycontent;
+}
+
+#secondary-content {
+    font-size: 15px;
+    color: #810000;
+    -webkit-flow-into: secondarycontent;
+}
+
+#adv-region1 {
+    border: solid #131d55 1px;
+    height: 200px;
+}
+
+#adv-region2 {
+    border: solid #810000 1px;
+    width: 20%;
+    height: 400px;
+    float: left;
+}
+
+#adv-region3 {
+    border: solid #131d55 1px;
+    width: 50%;
+    height: 200px;
+    float: left;
+}
+
+#adv-region4 {
+    border: solid #810000 1px;
+    width: 20%;
+    height: 400px;
+    float: left;
+}
+
+.primary {
+    margin: 10px;
+    -webkit-flow-from: primarycontent;
+}
+
+.secondary {
+    margin: 10px;
+    -webkit-flow-from: secondarycontent;
+}
+
+/*** CSS Exclusions ***/
+
+#css-exclusions {
+    line-height: 15px;
+    -webkit-hyphens: auto;
+    -webkit-shape-inside: rectangle(0px, 0px, 625px, 370px, 150px, 150px);
+    overflow: hidden;
+    font-size: 12px;
+}
+
+/*** Filters ***/
+
+.blur-filter {
+    -webkit-filter: blur(3px);
+}
+
+.dropshadow-filter {
+    -webkit-filter: drop-shadow(5px 5px 5px rgba(0, 0, 0, 0.5));
+}
+
+.photo-filters {
+    -webkit-filter: brightness(10%) 
+        saturate(1000%) 
+        hue-rotate(180deg);
+}
+
+.crumple-filter {
+    -webkit-filter: custom(url(../shaders/crumple.vs) 
+        mix(url(../shaders/crumple.fs) multiply source-atop), 
+        50 50 border-box, transform perspective(1000) scale(1) 
+        rotateX(0deg) rotateY(0deg) rotateZ(0deg), amount 1, 
+        strength 0.4, lightIntensity 1);
+}
+
+.sphere-filter {
+    -webkit-filter: custom(url(../shaders/spherify.vs) mix(url(../shaders/spherify.fs) multiply source-atop), 50 50 border-box, amount 1, sphereRadius 0.35, sphereAxis -0.25 1 0, sphereRotation 90, ambientLight 0, lightPosition 1 -0.25 0.25, lightColor 1 1 1 1, transform perspective(1000) scale(1) rotateX(0deg) rotateY(0deg) rotateZ(0deg));
+}
+
+.burn-filter {
+    -webkit-filter: custom(url(../shaders/burn.vs) mix(url(../shaders/burn.fs) multiply source-atop), 50 1 border-box, transform perspective(1000) scale(1) rotateX(0deg) rotateY(0deg) rotateZ(0deg), amount 1, randomSeed 0)
+}
+
+
+/**** Compositing Demos *****/
+
+#compositing-container {
+    height: 400px;
+    widht: 700px;
+    position: relative;
+    -webkit-isolation: isolate;
+}
+
+#compositing-destination {
+    position: absolute;
+    width: 600px;
+    height: 300px;
+    border: solid #000 2px;
+    background: -webkit-linear-gradient(-45deg, rgba(59,103,158,1) 0%,rgba(43,136,217,1) 30%,rgba(32,124,202,1) 51%,rgba(125,185,232,1) 100%);
+}
+
+#compositing-source {
+    position: absolute;
+    width: 500px;
+    height: 200px;
+    border-radius: 100px;
+    right: 100px;
+    top: 125px;
+    border: solid #000 2px;
+    background: -webkit-radial-gradient(center, ellipse cover, rgba(254,252,234,1) 0%,rgba(241,218,54,1) 100%);
+}
+
+.dst-over {
+   -webkit-alpha-compositing: dst-over;    
+}
+
+.dst-atop {
+   -webkit-alpha-compositing: dst-atop;
+}
+
+.dst-in {
+    -webkit-alpha-compositing: dst-in;
+}
+
+.src-in {
+    -webkit-alpha-compositing: src-in;
+}
+
+.plus {
+    -webkit-alpha-compositing: plus;
+}
+
+/**** Blending ****/
+
+#blending-container {
+    height: 400px;
+    widht: 700px;
+    position: relative;
+}
+
+#blending-beer-photo {
+
+}
+
+#blending-ps-logo {
+    margin-top: -400px;
+}
+
+.blend-multiply {
+    -webkit-blend-mode: multiply;
+}
+
+.blend-screen {
+    -webkit-blend-mode: screen;
+}
+
+.blend-color-dodge {
+    -webkit-blend-mode: color-dodge;
+}
+
+.blend-hard-light {
+    -webkit-blend-mode: hard-light;
+}
+
+.blend-soft-light {
+    -webkit-blend-mode: soft-light;
 }
